@@ -1,0 +1,1 @@
+console.log('game2.js linked');

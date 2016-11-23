@@ -1,12 +1,12 @@
-![](https://30.media.tumblr.com/tumblr_lm34yxL6Hb1qjgaaxo1_500.gif)
+![](http://i.giphy.com/11clOWGCHzWG7C.gif)
 
 # Game of Zones
 
-When you play the Game of Zones, you win, or ... well you don't die but you might not win. We're going to be building some interactive games using our new knowledge of EVENTS, compounding our previous knowledge of functions and JavaScript fundamentals.
+When you play the Game of Zones, you win, or.. well you don't die but you might not win. We're going to be building some interactive games using our new knowledge of EVENTS, compounding our previous knowledge of functions and JavaScript fundamentals.
 
 ## Setup
 
-You've been provided starter code - no need to edit `index.html` or `style.css`, work only in `starter1.js` for Game 1 and `starter2.js` for Game 2.
+You've been provided starter code - no need to edit `index.html` or `style.css`, work only in `game1.js` for Game 1 and `game2.js` for Game 2.
 
 Before coding, look through both games and their notes. Be sure to spend at least 15 minutes thinking about how to build a game out before actually touching ANY code. Even if your pseudocode isn't perfect, it breaks down the problem into smaller steps to tackle and gives you a roadmap of how to proceed.
 
