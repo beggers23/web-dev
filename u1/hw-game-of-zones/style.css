@@ -12,6 +12,10 @@
   transition: 0.5s all;
 }
 
+.clicked{
+  
+}
+
 .green {
   background-color: green;
 }
