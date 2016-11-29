@@ -1,0 +1,42 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#movieInfo {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+#posterSpot {
+  width: 40%;
+  height: 80%;
+  border: 1px solid black;
+}
+
+#textSpot {
+  width: 40%;
+  height: 80%;
+  border: 1px solid black;
+}
