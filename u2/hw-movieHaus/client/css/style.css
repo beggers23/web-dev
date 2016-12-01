@@ -11,18 +11,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 header {
-  height: 10vh;
+  height: 20vh;
   width: 100vw;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.appTitle {
+  line-height: 1;
 }
 
 #movieInfo {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -30,13 +36,42 @@ header {
 }
 
 #posterSpot {
-  width: 40%;
+  width: 30%;
+  height: 80%;
+  text-align: center;
+}
+
+.moviePoster {
+  height: 100%;
+}
+
+#textSpot {
+  width: 60%;
   height: 80%;
   border: 1px solid black;
 }
 
-#textSpot {
-  width: 40%;
-  height: 80%;
-  border: 1px solid black;
+.titleBox {
+  padding: 0;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+.title {
+  font-variant: small-caps;
+}
+
+.year {
+  font-size: 1rem;
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ratingLink:link, .ratingLink:visited{
+  color: black;
 }
