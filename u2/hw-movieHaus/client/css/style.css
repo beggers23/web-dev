@@ -70,8 +70,26 @@ header {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid black;
 }
 
 .ratingLink:link, .ratingLink:visited{
   color: black;
+}
+
+.castPlot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.castBox {
+  padding: 1rem;
+  width: 50%;
+}
+
+.plotBox {
+  padding: 1rem;
+  width: 50%;
 }

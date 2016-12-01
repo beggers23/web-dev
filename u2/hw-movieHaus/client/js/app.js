@@ -27,11 +27,8 @@ movieHaus.displayMovie = function(movie){
   //Sets up the details, actor, director and others
   movieHaus.movieDetails(movie);
 
-  //Sets up the Plot description
-  movieHaus.moviePlot(movie);
-
   //Sets up the Details about Actors and Directors
-  movieHaus.movieCast(movie);
+  movieHaus.movieCastPlot(movie);
 
   //Creates poster img
   movieHaus.moviePoster(movie);
@@ -72,17 +69,38 @@ movieHaus.movieDetails = function(movie){
 
 }
 
+movieHaus.movieCastPlot = function(movie){
+  let castPlot = document.createElement('div');
+  castPlot.className = 'castPlot';
 
-movieHaus.moviePlot = function(movie){
+  let plotBox = document.createElement('div');
+  plotBox.className = 'plotBox';
+
+
   let plot = document.createElement('p');
   plot.className = 'moviePlot';
   plot.appendChild(document.createTextNode(movie.Plot));
+  plotBox.appendChild(plot);
 
-  document.querySelector('#textSpot').appendChild(plot);
-}
 
-movieHaus.movieCast = function(movie){
+  let casting = document.createElement('div');
+  casting.className = 'castBox';
 
+  let actors = document.createElement('p');
+  actors.appendChild(document.createTextNode('Actors: '+movie.Actors));
+  casting.appendChild(actors);
+
+  let writers = document.createElement('p');
+  writers.appendChild(document.createTextNode('Writer: '+movie.Writer));
+  casting.appendChild(writers);
+
+  let director = document.createElement('p');
+  director.appendChild(document.createTextNode('Director: '+movie.Director));
+  casting.appendChild(director);
+
+  castPlot.appendChild(plotBox);
+  castPlot.appendChild(casting);
+  document.querySelector('#textSpot').appendChild(castPlot);
 }
 
 
