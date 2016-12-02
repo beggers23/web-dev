@@ -20,18 +20,26 @@ movieHaus.getMovie = function(search){
 
 movieHaus.displayMovie = function(movie){
   console.log(movie);
+  if(movie.Response == true){
+    //Sets up the title h1
+    movieHaus.movieHeader(movie);
 
-  //Sets up the title h1
-  movieHaus.movieHeader(movie);
+    //Sets up the details, actor, director and others
+    movieHaus.movieDetails(movie);
 
-  //Sets up the details, actor, director and others
-  movieHaus.movieDetails(movie);
+    //Sets up the Details about Actors and Directors
+    movieHaus.movieCastPlot(movie);
 
-  //Sets up the Details about Actors and Directors
-  movieHaus.movieCastPlot(movie);
+    //Creates poster img
+    movieHaus.moviePoster(movie);
+  }
+  else {
+    movieHaus.failedSearch();
+  }
+}
 
-  //Creates poster img
-  movieHaus.moviePoster(movie);
+movieHaus.failedSearch = function(){
+  
 }
 
 movieHaus.movieHeader = function( movie ){
@@ -64,8 +72,13 @@ movieHaus.movieDetails = function(movie){
   imdbRating.className = 'imdbRating';
   imdbRating.innerHTML = '<a class="ratingLink" href="http://www.imdb.com/title/'+movie.imdbID+'">IMDB Rating: '+movie.imdbRating+'</a>';
 
+  let runtime = document.createElement('h4');
+  runtime.className = 'runtime';
+  runtime.appendChild(document.createTextNode('Runtime: '+movie.Runtime));
+
   detailsBox.appendChild(metaScore);
   detailsBox.appendChild(imdbRating);
+  detailsBox.appendChild(runtime);
 
 }
 
@@ -82,9 +95,18 @@ movieHaus.movieCastPlot = function(movie){
   plot.appendChild(document.createTextNode(movie.Plot));
   plotBox.appendChild(plot);
 
+  let awards = document.createElement('p');
+  awards.className = 'movieAwards';
+  awards.appendChild(document.createTextNode('Awards: '+movie.Awards));
+  plotBox.appendChild(awards);
+
 
   let casting = document.createElement('div');
   casting.className = 'castBox';
+
+  let director = document.createElement('p');
+  director.appendChild(document.createTextNode('Director: '+movie.Director));
+  casting.appendChild(director);
 
   let actors = document.createElement('p');
   actors.appendChild(document.createTextNode('Actors: '+movie.Actors));
@@ -94,9 +116,6 @@ movieHaus.movieCastPlot = function(movie){
   writers.appendChild(document.createTextNode('Writer: '+movie.Writer));
   casting.appendChild(writers);
 
-  let director = document.createElement('p');
-  director.appendChild(document.createTextNode('Director: '+movie.Director));
-  casting.appendChild(director);
 
   castPlot.appendChild(plotBox);
   castPlot.appendChild(casting);

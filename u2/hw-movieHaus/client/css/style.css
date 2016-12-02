@@ -5,11 +5,11 @@ html {
 }
 
 body {
-  background: lightblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -22,8 +22,29 @@ header {
   border-bottom: 2px solid black;
 }
 
+.search {
+  border: 1px solid black;
+  border-radius: none;
+  outline: none;
+  background: none;
+  font-family: 'Bungee', cursive;
+}
+
+.search:hover {
+  cursor: pointer;
+}
+
 .appTitle {
   line-height: 1;
+  font-family: 'Bungee', cursive;
+}
+
+#movieTitle {
+  font-family: 'Bungee', cursive;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  background: none;
 }
 
 #movieInfo {
@@ -48,13 +69,13 @@ header {
 #textSpot {
   width: 60%;
   height: 80%;
-  border: 1px solid black;
 }
 
 .titleBox {
   padding: 0;
   border-bottom: 2px solid black;
   text-align: center;
+  height: 15%;
 }
 
 .title {
@@ -70,7 +91,7 @@ header {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  height: 15%;
 }
 
 .ratingLink:link, .ratingLink:visited{
@@ -82,14 +103,17 @@ header {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  height: 50%;
 }
 
 .castBox {
   padding: 1rem;
   width: 50%;
+  height: 100%;
 }
 
 .plotBox {
   padding: 1rem;
   width: 50%;
+  height: 100%;
 }
