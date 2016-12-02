@@ -20,7 +20,7 @@ movieHaus.getMovie = function(search){
 
 movieHaus.displayMovie = function(movie){
   console.log(movie);
-  if(movie.Response == true){
+  if(movie.Response === 'True'){
     //Sets up the title h1
     movieHaus.movieHeader(movie);
 
@@ -34,12 +34,20 @@ movieHaus.displayMovie = function(movie){
     movieHaus.moviePoster(movie);
   }
   else {
-    movieHaus.failedSearch();
+    movieHaus.failedSearch(movie);
   }
 }
 
-movieHaus.failedSearch = function(){
-  
+movieHaus.failedSearch = function(movie){
+
+  let failHeader = document.createElement('h3');
+  failHeader.appendChild(document.createTextNode(movie.Error));
+
+  let failText = document.createElement('p');
+  failText.appendChild(document.createTextNode("Why don't you try a new search?"));
+
+  document.querySelector('#textSpot').appendChild(failHeader);
+  document.querySelector('#textSpot').appendChild(failText);
 }
 
 movieHaus.movieHeader = function( movie ){
@@ -70,7 +78,7 @@ movieHaus.movieDetails = function(movie){
 
   let imdbRating = document.createElement('h4');
   imdbRating.className = 'imdbRating';
-  imdbRating.innerHTML = '<a class="ratingLink" href="http://www.imdb.com/title/'+movie.imdbID+'">IMDB Rating: '+movie.imdbRating+'</a>';
+  imdbRating.innerHTML = '<a class="ratingLink" href="http://www.imdb.com/title/'+movie.imdbID+'">IMDB Rating</a>: '+movie.imdbRating;
 
   let runtime = document.createElement('h4');
   runtime.className = 'runtime';
@@ -89,31 +97,56 @@ movieHaus.movieCastPlot = function(movie){
   let plotBox = document.createElement('div');
   plotBox.className = 'plotBox';
 
+  let plotIndicator = document.createElement('h3');
+  plotIndicator.appendChild(document.createTextNode('Plot: '));
+  plotIndicator.className = 'plotIndicator';
+  plotBox.appendChild(plotIndicator);
+
 
   let plot = document.createElement('p');
   plot.className = 'moviePlot';
   plot.appendChild(document.createTextNode(movie.Plot));
   plotBox.appendChild(plot);
 
+  let awardIndicator = document.createElement('h3');
+  awardIndicator.appendChild(document.createTextNode('Awards: '));
+  awardIndicator.className = 'awardIndicator';
+  plotBox.appendChild(awardIndicator);
+
   let awards = document.createElement('p');
   awards.className = 'movieAwards';
-  awards.appendChild(document.createTextNode('Awards: '+movie.Awards));
+  awards.appendChild(document.createTextNode(movie.Awards));
   plotBox.appendChild(awards);
 
 
   let casting = document.createElement('div');
   casting.className = 'castBox';
 
+  let directorIndicator = document.createElement('h4');
+  directorIndicator.appendChild(document.createTextNode('Director: '));
+  directorIndicator.className = 'directorIndicator';
+  casting.appendChild(directorIndicator);
+
   let director = document.createElement('p');
-  director.appendChild(document.createTextNode('Director: '+movie.Director));
+  director.appendChild(document.createTextNode(movie.Director));
   casting.appendChild(director);
 
+  let actorIndicator = document.createElement('h4');
+  actorIndicator.appendChild(document.createTextNode('Actors: '));
+  actorIndicator.className = 'actorIndicator';
+  casting.appendChild(actorIndicator);
+
   let actors = document.createElement('p');
-  actors.appendChild(document.createTextNode('Actors: '+movie.Actors));
+  actors.appendChild(document.createTextNode(movie.Actors));
   casting.appendChild(actors);
 
+  let writerIndicator = document.createElement('h4');
+  writerIndicator.appendChild(document.createTextNode('Writers: '));
+  writerIndicator.className = 'writerIndicator';
+  casting.appendChild(writerIndicator);
+
   let writers = document.createElement('p');
-  writers.appendChild(document.createTextNode('Writer: '+movie.Writer));
+  writers.appendChild(document.createTextNode(movie.Writer));
   casting.appendChild(writers);
 
 
