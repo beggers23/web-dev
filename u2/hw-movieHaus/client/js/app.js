@@ -13,7 +13,7 @@ movieHaus.search = function(){
 }
 
 movieHaus.getMovie = function(search){
-  fetch('http://www.omdbapi.com/?t='+search)
+  fetch('http://www.omdbapi.com/?t='+search+'&plot=long&tomatoes=true')
     .then(r => r.json())
     .then(response => movieHaus.displayMovie(response));
 }
@@ -97,20 +97,30 @@ movieHaus.movieCastPlot = function(movie){
   let plotBox = document.createElement('div');
   plotBox.className = 'plotBox';
 
-  let plotIndicator = document.createElement('h3');
-  plotIndicator.appendChild(document.createTextNode('Plot: '));
-  plotIndicator.className = 'plotIndicator';
-  plotBox.appendChild(plotIndicator);
+  let tomatoIndicator = document.createElement('h4');
+  tomatoIndicator.appendChild(document.createTextNode('Rotten Tomatoes Review: '));
+  tomatoIndicator.className = 'indicator'
+  plotBox.appendChild(tomatoIndicator);
 
+  let tomatoConsensus = document.createElement('p');
+  tomatoConsensus.appendChild(document.createTextNode(movie.tomatoConsensus));
+  tomatoConsensus.className = 'tomatoConsensus';
+  plotBox.appendChild(tomatoConsensus);
+
+
+  let plotIndicator = document.createElement('h4');
+  plotIndicator.appendChild(document.createTextNode('Plot: '));
+  plotIndicator.className = 'indicator';
+  plotBox.appendChild(plotIndicator);
 
   let plot = document.createElement('p');
   plot.className = 'moviePlot';
   plot.appendChild(document.createTextNode(movie.Plot));
   plotBox.appendChild(plot);
 
-  let awardIndicator = document.createElement('h3');
+  let awardIndicator = document.createElement('h4');
   awardIndicator.appendChild(document.createTextNode('Awards: '));
-  awardIndicator.className = 'awardIndicator';
+  awardIndicator.className = 'indicator';
   plotBox.appendChild(awardIndicator);
 
   let awards = document.createElement('p');
@@ -124,7 +134,7 @@ movieHaus.movieCastPlot = function(movie){
 
   let directorIndicator = document.createElement('h4');
   directorIndicator.appendChild(document.createTextNode('Director: '));
-  directorIndicator.className = 'directorIndicator';
+  directorIndicator.className = 'indicator';
   casting.appendChild(directorIndicator);
 
   let director = document.createElement('p');
@@ -133,7 +143,7 @@ movieHaus.movieCastPlot = function(movie){
 
   let actorIndicator = document.createElement('h4');
   actorIndicator.appendChild(document.createTextNode('Actors: '));
-  actorIndicator.className = 'actorIndicator';
+  actorIndicator.className = 'indicator';
   casting.appendChild(actorIndicator);
 
   let actors = document.createElement('p');
@@ -142,7 +152,7 @@ movieHaus.movieCastPlot = function(movie){
 
   let writerIndicator = document.createElement('h4');
   writerIndicator.appendChild(document.createTextNode('Writers: '));
-  writerIndicator.className = 'writerIndicator';
+  writerIndicator.className = 'indicator';
   casting.appendChild(writerIndicator);
 
   let writers = document.createElement('p');

@@ -5,55 +5,80 @@ html {
 }
 
 body {
+  margin:0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
+  background-color: #B9B9B6;
+}
+
+.allContent {
+  width: 80vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-shadow: 15px -10px 10px -7px #333333, -15px -10px 10px -7px #333333;
 }
 
 header {
   height: 20vh;
-  width: 100vw;
+  width: 80vw;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid black;
+  color: floralwhite;
+  background-color: #333333;
 }
 
 .search {
-  border: 1px solid black;
+  border: 1px solid floralwhite;
   border-radius: none;
   outline: none;
   background: none;
   font-family: 'Bungee', cursive;
+  color: floralwhite;
 }
 
 .search:hover {
   cursor: pointer;
+  border: 1px solid floralwhite;
 }
 
 .appTitle {
-  line-height: 1;
+  line-height: 1.5;
   font-family: 'Bungee', cursive;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
 }
 
 #movieTitle {
   font-family: 'Bungee', cursive;
   outline: none;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid floralwhite;
   background: none;
+  color: floralwhite;
+}
+
+#movieTitle:focus {
+  color: floralwhite;
+  background-color: none;
 }
 
 #movieInfo {
-  width: 100vw;
+  width: 80vw;
   height: 80vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  background-color: floralwhite;
 }
 
 #posterSpot {
@@ -69,6 +94,7 @@ header {
 #textSpot {
   width: 60%;
   height: 80%;
+  overflow-y: scroll;
 }
 
 .titleBox {
@@ -116,4 +142,9 @@ header {
   padding: 1rem;
   width: 50%;
   height: 100%;
+}
+
+.indicator {
+  font-size: 1.2rem;
+  text-decoration: underline;
 }
